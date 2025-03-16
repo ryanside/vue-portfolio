@@ -63,7 +63,7 @@ watch(
 
     <div
       v-if="isSubmitted"
-      className="bg-neutral-800 px-4 py-4 rounded-md my-2 text-center"
+      className="bg-neutral-900 px-4 py-4 rounded-md my-2 text-center"
     >
       <h3 className="text-xl text-white mb-2">Thank you for your message!</h3>
       <p className="tracking-wide mb-4">
@@ -133,7 +133,7 @@ watch(
       <button
         type="submit"
         :disabled="isSubmitting"
-        className="bg-lime-400 hover:bg-lime-500 text-black px-4 py-2 rounded-sm transition-colors duration-200 disabled:bg-neutral-600 disabled:cursor-not-allowed disabled:text-white"
+        className="bg-lime-400 hover:bg-lime-500 text-black px-4 py-2 rounded-sm transition-colors duration-200 disabled:bg-neutral-800 disabled:cursor-not-allowed disabled:text-white"
       >
         <span v-if="isSubmitting">Sending...</span>
         <span v-else>Send Message</span>
