@@ -2,6 +2,8 @@
 
 A personal portfolio website built with Vue 3 and Vite.
 
+https://github.com/ryanside/vue-portfolio
+
 ## Project Overview
 
 This project is a SPA portfolio website that includes multiple sections:
