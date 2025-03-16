@@ -1,30 +1,49 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { onMounted, ref } from "vue";
+import Navbar from "./components/Navbar.vue";
+import ContactSection from "./components/ContactSection.vue";
+import HomeSection from "./components/HomeSection.vue";
+
+
+// Active section tracking
+const activeSection = ref("home");
+
+const handleActiveSection = (section: string) => {
+  activeSection.value = section;
+};
+
+const showToast = ref(false);
+
+onMounted(() => {
+  showToast.value = true;
+  setTimeout(() => {
+    showToast.value = false;
+  }, 5000);
+});
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div className="flex flex-col min-h-screen max-w-7xl mx-auto my-8">
+    <header id="navbar" className="relative">
+      <Navbar :active-section="activeSection" @update:active-section="handleActiveSection" />
+    </header>
+
+    <main>
+      <section v-if="activeSection === 'home'">
+        <HomeSection />
+      </section>
+      <section v-if="activeSection === 'contact'">
+        <ContactSection />
+      </section>
+    </main>
+    <!-- Toast notification -->
+    <div
+      v-if="showToast"
+      className="fixed bottom-4 right-4 bg-indigo-500 text-white px-4 py-2 rounded-md shadow-lg"
+    >
+      Welcome to my site! Thanks for visiting 👋
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style></style>
