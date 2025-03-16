@@ -2,7 +2,6 @@
 import { onMounted, ref } from "vue";
 import Navbar from "./components/Navbar.vue";
 
-// Active section tracking
 const activeSection = ref("home");
 
 const handleActiveSection = (section: string) => {

@@ -33,14 +33,14 @@ export const useProjectsStore = defineStore(
       },
     ]);
 
-    // Function to add a new project
     const newProject = ref({
-      title: "",
-      description: "",
-      technologies: "",
-      featured: false,
+        title: "",
+        description: "",
+        technologies: "",
+        featured: false,
     });
-
+    
+    // Function to add a new project
     const addProject = () => {
       if (newProject.value.title && newProject.value.description) {
         projects.value.push({
