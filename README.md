@@ -4,7 +4,7 @@ A personal portfolio website built with Vue 3 and Vite.
 
 ## Project Overview
 
-This project is a single-page portfolio website that includes multiple sections:
+This project is a SPA portfolio website that includes multiple sections:
 - Home section with an about me
 - Projects section to showcase my work
 - Contact section with a form to reach out to me
