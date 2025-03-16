@@ -8,37 +8,54 @@
       <div
         className="col-start-1 col-end-3 flex items-center gap-x-3 lg:col-end-2 lg:row-start-1"
       >
-        <a href="/" className="col-start-1 col-end-2">
+        <router-link to="/" className="hidden md:block col-start-1 col-end-2">
           <span className="font-semibold text-white">> ryanside</span>
-        </a>
-        <div className=" md:flex absolute left-1/2 transform -translate-x-1/2">
-          <ul className="flex flex-wrap gap-x-6 md:flex-nowrap">
+        </router-link>
+        <div className="flex absolute left-1/2 transform -translate-x-1/2">
+          <ul className="flex gap-x-6">
             <li>
-              <button href="/" className="font-medium cursor-pointer" @click="handleClick('home')">home</button>
+              <router-link
+                to="/"
+                className="font-medium cursor-pointer hover:text-white"
+                @click="handleClick('home')"
+                >home</router-link
+              >
             </li>
-            <li className="text-decoration" role="presentation">|</li>
+            <li className="" role="presentation">|</li>
             <li>
-              <button href="/" className="font-medium cursor-pointer" @click="handleClick('projects')">projects</button>
+              <router-link
+                to="/projects"
+                className="font-medium cursor-pointer hover:text-white"
+                @click="handleClick('projects')"
+                >projects</router-link
+              >
             </li>
-            <li className="text-decoration" role="presentation">|</li>
+            <li className="" role="presentation">|</li>
             <li>
-              <button href="/" className="font-medium cursor-pointer" @click="handleClick('contact')">contact</button>
+              <router-link
+                to="/contact"
+                className="font-medium cursor-pointer hover:text-white"
+                @click="handleClick('contact')"
+                >contact</router-link
+              >
             </li>
           </ul>
         </div>
       </div>
       <div
-        className="group col-start-2 col-end-3 flex items-center justify-end gap-1.5 lg:row-start-1 lg:gap-3"
+        className="hidden group col-start-2 col-end-3 lg:flex items-center justify-end gap-1.5 lg:row-start-1 lg:gap-3"
       >
         <div className="flex items-center gap-x-3">
           <button
-            @click="incrementVisitors"
+            @click="webStore.incrementVisitors"
             className="font-medium hover:text-lime-500 transition-colors duration-200"
           >
             click me!
           </button>
           <span className="">|</span>
-          <a href="" class="font-semibold text-lime-500">visitors: {{ visitorCount }}</a>
+          <a href="" className="font-semibold text-lime-500"
+            >visitors: {{ webStore.visitorCount }}</a
+          >
         </div>
       </div>
     </div>
@@ -46,12 +63,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits } from "vue";
-// Counter for interactivity
-const visitorCount = ref(0);
-const incrementVisitors = () => {
-  visitorCount.value++;
-};
+import { defineEmits } from "vue";
+import { useWebStore } from "../stores/web";
+
+const webStore = useWebStore();
 
 const emit = defineEmits(["update:active-section"]);
 

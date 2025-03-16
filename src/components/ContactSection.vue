@@ -71,7 +71,7 @@ watch(
       </p>
       <button
         @click="isSubmitted = false"
-        className="bg-lime-500 hover:bg-lime-400 text-black px-4 py-2 rounded-sm transition-colors duration-200"
+        className="bg-lime-400 hover:bg-lime-500 text-black px-4 py-2 rounded-sm transition-colors duration-200"
       >
         send another message
       </button>
@@ -133,7 +133,7 @@ watch(
       <button
         type="submit"
         :disabled="isSubmitting"
-        className="bg-lime-500 hover:bg-lime-400 text-black px-4 py-2 rounded-sm transition-colors duration-200 disabled:bg-neutral-600 disabled:cursor-not-allowed disabled:text-white"
+        className="bg-lime-400 hover:bg-lime-500 text-black px-4 py-2 rounded-sm transition-colors duration-200 disabled:bg-neutral-600 disabled:cursor-not-allowed disabled:text-white"
       >
         <span v-if="isSubmitting">Sending...</span>
         <span v-else>Send Message</span>

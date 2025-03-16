@@ -34,12 +34,13 @@ const toggleExtraInfo = () => {
         internet where I share my projects, thoughts, and journey. Founder of +
         currently working on
         <a
-          href="https://tcg-gallery.fly.dev/"
+          href="https://github.com/ryanside/tcg-gallery"
+          target="_blank"
           className="text-indigo-500 underline"
           >tcg-gallery</a
         >
         and
-        <a href="/" target="_blank" className="text-indigo-500 underline"
+        <a href="https://github.com/unnamed-ai-org" target="_blank" className="text-indigo-500 underline"
           >repose.ai</a
         >.
       </p>
@@ -72,12 +73,12 @@ const toggleExtraInfo = () => {
         </p>
       </div>
 
-      <div class="border-dashed border-t-2 border-neutral-600 my-2"></div>
+      <div className="border-dashed border-t-2 border-neutral-600 my-2"></div>
 
       <p className="tracking-wide text-lg">
         Lets make cool stuff.
-        <a href="/" target="_blank" className="text-lime-500 underline"
-          >Contact me</a
+        <router-link to="/contact" className="text-lime-500 underline"
+          >Contact me</router-link
         >.
       </p>
     </div>
